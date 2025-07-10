@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      figure.snip1139 {
+        font-family: 'Raleway', Arial, sans-serif;
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+        min-width: 220px;
+        max-width: 310px;
+        width: 100%;
+        color: #333;
+        text-align: left;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+      }
+      footer{
+        width:100%;
+      }
+          body {
+        background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply');
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed; /* Parallax effect */
+          }
+      figure.snip1139 * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+        transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+      }
+      figure.snip1139 img {
+        max-width: 100%;
+        vertical-align: middle;
+      }
+      figure.snip1139 blockquote {
+        position: relative;
+        background-color: #ffffff;
+        padding: 25px 50px 70px 50px;
+        font-size: 0.8em;
+        font-weight: 500;
+        text-align: left;
+        margin: 0;
+        line-height: 1.6em;
+        font-style: italic;
+      }
+      figure.snip1139 blockquote:before,
+      figure.snip1139 blockquote:after {
+        font-family: 'FontAwesome';
+        content: "\201C";
+        position: absolute;
+        font-size: 50px;
+        opacity: 0.3;
+        font-style: normal;
+      }
+      figure.snip1139 blockquote:before {
+        top: 25px;
+        left: 20px;
+      }
+      figure.snip1139 blockquote:after {
+        content: "\201D";
+        right: 20px;
+        bottom: 0;
+      }
+      figure.snip1139 .arrow {
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 25px solid #ffffff;
+        margin: 0;
+        position: absolute;
+      }
+      figure.snip1139 .author {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 5px 25px;
+        color: #000000;
+        background-color: #ffffff;
+        margin: 0;
+        text-transform: uppercase;
+      }
+      figure.snip1139 .author h5 {
+        opacity: 0.8;
+        margin: 0;
+        font-weight: 800;
+      }
+      figure.snip1139 .author h5 span {
+        font-weight: 400;
+        text-transform: none;
+        padding-left: 5px;
+      }
+      @media (max-width: 1023px) { /* lg breakpoint */
+            .course-card {
+                flex: 0 0 calc(100% / 2 - 1rem); /* Two cards per view on md */
+                margin-right: 1rem;
+                min-width: calc(100% / 2 - 1rem);
+            }
+        }
+        @media (max-width: 767px) { /* md breakpoint */
+            .course-card {
+                flex: 0 0 100%; /* One card per view on sm */
+                margin-right: 0;
+                min-width: 100%;
+            }
+        }
+
+        .slider-container {
+            overflow: hidden; /* Hide overflowing courses */
+        }
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Smooth sliding transition */
+        }
+        .course-card {
+            flex: 0 0 calc(100% / 3 - 1.333rem); /* Three cards per view, accounting for gap */
+            margin-right: 1.333rem; /* Equivalent to gap-8 in Tailwind for 3 items */
+            min-width: calc(100% / 3 - 1.333rem); /* Ensure consistent width */
+        }
+
+        .antialiased{
+          font-family: 'Inter', sans-serif;
+          background-color: #1a202c;
+        }
+      </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <nav class="bg-gray-800 ">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-18 items-center justify-between z-10">
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-60">
+              <div class="flex shrink-0 items-center">
+                <img class="h-10 w-auto" src="https://www.clatnlti.com/assets/images/logonlti.png" alt="clatnlti" />
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                      <a href="#about" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-purple-400">About Us</a>
+                    <a href="#course" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-purple-400">Courses</a>
+                  <a href="#crash-course" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-purple-400">Crash-Course</a>
+                  <a href="#testimonials" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-purple-400">Testimonials </a>
+                  <a href="#contact" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-purple-400">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      
+    <div id="about">
+      <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 z-1">
+        <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
+          <div class="aspect-1097/845 w-274.25 bg-linear-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+        <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
+          <div class="aspect-1097/845 w-274.25 bg-linear-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:mx-0">
+            <h2 class="text-5xl font-semibold tracking-tight text-white sm:text-7xl">NATIONAL LAW TRAINING INSTITUTE</h2>
+            <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">India's first institute aimed at providing first-hand mentorship to CLAT aspirants by connecting them directly with students.Crack CUET PG LLB  2025! Get mentored by DU-LLB toppers, access live sessions, mock tests, and comprehensive study material to secure your dream college.</p>
+          </div>
+          <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+            <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="flex flex-col-reverse gap-1">
+                <dt class="text-base/7 text-gray-300">Mentors</dt>
+                <dd class="text-4xl font-semibold tracking-tight text-white">40+</dd>
+              </div>
+              <div class="flex flex-col-reverse gap-1">
+                <dt class="text-base/7 text-gray-300">Enrolled Students</dt>
+                <dd class="text-4xl font-semibold tracking-tight text-white">2K++</dd>
+              </div>
+              <div class="flex flex-col-reverse gap-1">
+                <dt class="text-base/7 text-gray-300">Clat Community</dt>
+                <dd class="text-4xl font-semibold tracking-tight text-white">10K+</dd>
+              </div>
+              <div class="flex flex-col-reverse gap-1">
+                <dt class="text-base/7 text-gray-300">Selection Across NLUS</dt>
+                <dd class="text-4xl font-semibold tracking-tight text-white">500+</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      
+    </div>  
+    </div>
+
+
+<div id="course">
+  <section class="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight">
+                Crack NLSAT 2026
+            </h2>
+            <p class="mt-4 text-xl text-gray-300"> 
+                Master the fundamentals and advanced concepts of CLAT.
+            </p>
+        </div>
+
+        <div class="relative">
+            <!-- Slider Container -->
+            <div class="slider-container">
+                <div id="courseSlider" class="slider-wrapper">
+                    <!-- Course Card 1 -->
+                    <div class="course-card bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full mb-4"> <!-- Darker blue background for icon -->
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0-6h.01M12 14l-9 5m9-5l9 5m-9-5V3"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">NLSAT Online Coaching and Mentorship + Test Series</h3> 
+                            <p class="text-gray-300 text-base mb-6"> <!-- Lighter gray text for card description -->
+                                Join India’s best NLSAT Coaching plus Mentorship program for NLSAT 2026. NLTI has produced over 30 selections, including AIR 1, 2, 4, & 5 in NLSAT 2024 – the highest by any coaching institute. <br>
+                                Batch Start: 20 July 2025
+                            </p>
+                            <a href="#" class="inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 2-->
+                    <div class="course-card bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-center w-16 h-16 bg-green-700 rounded-full mb-4">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">CLAT 2026 Blueprint: Platinum Package</h3>
+                            <p class="text-gray-300 text-base mb-6">
+                                (Mentorship with Test Series) <br> Achieve your dream of joining top NLUs like NLSIU, NALSAR, and NLUD with our expertly designed CLAT Coaching and AILET Coaching <br>
+                                Batch Start: 10 July 2025
+                            </p>
+                            <a href="#" class="inline-block bg-green-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-green-700 transition-colors duration-300">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 3 -->
+                    <div class="course-card bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-center w-16 h-16 bg-purple-700 rounded-full mb-4"> 
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">CLAT 2026 Blueprint: Silver Package</h3>
+                            <p class="text-gray-300 text-base mb-6">
+                                Prepare for CLAT 2026 with NLTI’s exclusive 3-Months Starters' Mentorship Course—tailored for beginners who want a strong foundation. One-on-one guidance to identify and overcome weak areas. <br> Batch Start: 10 August 2025
+                            </p>
+                            <a href="#" class="inline-block bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-purple-700 transition-colors duration-300">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 4 -->
+                    <div class="course-card bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-center w-16 h-16 bg-yellow-700 rounded-full mb-4"> 
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-1.25-3M15 10V5a2 2 0 00-2-2H9a2 2 0 00-2 2v5m3 4v.01M12 12h.01"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">CLAT 2025 : Gold Package</h3>
+                            <p class="text-gray-300 text-base mb-6">
+                                This course is designed to provide personalized guidance to aspiring law students aiming for top NLUs like NLS, NALSAR, and NLUD.
+                            </p>
+                            <a href="#" class="inline-block bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-yellow-700 transition-colors duration-300">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+
+            <!-- Slider Navigation Buttons -->
+            <button id="prevBtn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-colors duration-300 z-10 -ml-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button id="nextBtn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-colors duration-300 z-10 -mr-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.getElementById('courseSlider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const courseCards = document.querySelectorAll('.course-card');
+        const totalCards = courseCards.length;
+        let currentIndex = 0; // Tracks the index of the first visible card
+
+        // Function to determine how many cards are visible at once based on screen width
+        const getCardsPerPage = () => {
+            if (window.innerWidth >= 1024) { // lg breakpoint
+                return 3;
+            } else if (window.innerWidth >= 768) { // md breakpoint
+                return 2;
+            } else { // sm breakpoint
+                return 1;
+            }
+        };
+
+        let cardsPerPage = getCardsPerPage();
+
+        // Function to update slider position
+        const updateSlider = () => {
+            // Calculate card width dynamically, including margin-right (gap)
+            let cardWidth = 0;
+            if (courseCards.length > 0) {
+                const firstCard = courseCards[0];
+                const style = window.getComputedStyle(firstCard);
+                const marginRight = parseFloat(style.marginRight);
+                cardWidth = firstCard.offsetWidth + marginRight;
+            }
+
+            const offset = -currentIndex * cardWidth;
+            slider.style.transform = `translateX(${offset}px)`;
+
+            // Enable/disable buttons based on current index
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex + cardsPerPage >= totalCards;
+
+            // Add/remove disabled styles
+            if (prevBtn.disabled) {
+                prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+            if (nextBtn.disabled) {
+                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        };
+
+        // Event listeners for navigation buttons
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex + cardsPerPage < totalCards) {
+                currentIndex += cardsPerPage;
+                updateSlider();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex = Math.max(0, currentIndex - cardsPerPage);
+                updateSlider();
+            }
+        });
+
+        // Update slider on window resize
+        window.addEventListener('resize', () => {
+            cardsPerPage = getCardsPerPage();
+            // Reset index to 0 or adjust to ensure valid view on resize
+            currentIndex = 0; // Resetting for simplicity, could be more sophisticated
+            updateSlider();
+        });
+
+        // Initial update
+        updateSlider();
+    });
+</script>
+</div>
+
+<div id="crash-course" class="bg-gray-900 text-gray-100 min-h-screen flex items-center justify-center p-4">
+  <section class="w-full max-w-4xl bg-gray-800 rounded-xl shadow-2xl overflow-hidden md:flex">
+    <div class="md:w-1/3 p-8 bg-gray-900 flex flex-col justify-between">
+        <div>
+            <h2 class="text-3xl font-extrabold text-purple-400 mb-4">
+                <span class="block">🚀</span> Crash Course
+            </h2>
+            <p class="text-gray-300 text-lg mb-6">
+                Dive deep into the essentials with our accelerated learning path. Master key concepts quickly and efficiently.
+            </p>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Concise Modules
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Practical Examples
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Interactive Tests
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Expert Insights
+                </li>
+            </ul>
+        </div>
+        <div class="mt-8 md:mt-0">
+            <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                Start Your Journey
+            </button>
+        </div>
+    </div>
+
+    <div class="md:w-2/3 p-8 space-y-6">
+        <div class="bg-gray-700 p-6 rounded-lg shadow-md border border-gray-600 hover:border-purple-500 transition duration-300 ease-in-out">
+            <h3 class="text-xl font-semibold text-white mb-2">Module 1: Foundations</h3>
+            <p class="text-gray-300 text-sm mb-3">
+                Understand the core principles and essential building blocks for clearing concepts. <br> ~Hinglish Language
+            </p>
+            <div class="flex items-center text-gray-400 text-xs mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Approx. 10 hours
+            </div>
+            <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Buy Now
+            </button>
+        </div>
+
+        <div class="bg-gray-700 p-6 rounded-lg shadow-md border border-gray-600 hover:border-purple-500 transition duration-300 ease-in-out">
+            <h3 class="text-xl font-semibold text-white mb-2">Module 2: Advanced Topics</h3>
+            <p class="text-gray-300 text-sm mb-3">
+                Explore sophisticated methods and practical applications and some short tricks to remember everything. <br>~ Hinglish Language
+            </p>
+            <div class="flex items-center text-gray-400 text-xs mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Approx. 12 hours
+            </div>
+            <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Buy Now
+            </button>
+        </div>
+
+        <div class="bg-gray-700 p-6 rounded-lg shadow-md border border-gray-600 hover:border-purple-500 transition duration-300 ease-in-out">
+            <h3 class="text-xl font-semibold text-white mb-2">Module 3: Tests & Explainations</h3>
+            <p class="text-gray-300 text-sm mb-3">
+                Apply your knowledge to real tests and quizzes and expert answers. Stay consistently engaged with our year-long series designed to build depth and precision through regular assessment <br>~ English Language
+            </p>
+            <div class="flex items-center text-gray-400 text-xs mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Approx. 4 hours
+            </div>
+            <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Buy Now
+            </button>
+        </div>
+    </div>
+</section>
+</div>
+
+
+<h1 class="text-4xl font-bold text-center my-10 text-white">What Students Say about Us</h1>
+    <div id="testimonials" style=" 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    height: 100%;">
+    <figure class="snip1139">
+      <blockquote>SThis CLAT course was a game-changer! The concise lessons and targeted mock tests helped me grasp complex concepts quickly.I highly recommend this course to everyone it will be a boost.
+        <div class="arrow"></div>
+      </blockquote>
+      <div class="author">
+        <h5>Raj Kumar <span> <br>- Delhi</span></h5>
+      </div>
+    </figure>
+    <figure class="snip1139 hover">
+      <blockquote>I'm so grateful for this CLAT course! The interactive sessions and personalized feedback were instrumental in improving my weak areas. Highly effective for anyone serious about law school.
+        <div class="arrow"></div>
+      </blockquote>
+      <div class="author">
+        <h5>Rit Reddy<span><br>- Benaras</span></h5>
+      </div>
+    </figure>
+    <figure class="snip1139">
+      <blockquote>This course transformed my CLAT preparation. The expert faculty made complex topics easy to understand, and the mock tests mirrored the actual exam perfectly. A top-tier program!
+        <div class="arrow"></div>
+      </blockquote>
+      <div class="author">
+        <h5>Rajesh<span class="text-0.8xl"><br>- Kolkata</span></h5>
+      </div>
+    </figure>
+    </div>
+
+
+   <div id="contact">  
+    <div class="isolate text-white sm:pt-4 md:pt-6 sm:py-24 lg:px-6">
+      <div class="absolute inset-x-0 -top-10 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+        <div class="relative left-1/2 -z-10 aspect-1000/678 w-144.5 max-w-none -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-288.75" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      </div>
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">Contact Us</h2>
+        <p class="mt-2 text-lg/8 ">Book Your Free Session</p>
+      </div>
+      <form action="#" method="POST" class="mx-auto mt-5 max-w-xl sm:mt-10">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div>
+            <label for="first-name" class="block text-sm/6 font-semibold">First name</label>
+            <div class="mt-2.5">
+              <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+            </div>
+          </div>
+          <div>
+            <label for="last-name" class="block text-sm/6 font-semibold ">Last name</label>
+            <div class="mt-2.5">
+              <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+              <label for="phone" class="block text-sm/6 font-semibold ">Phone</label>
+              <div class="mt-2.5">
+                <input type="number" name="phone" id="phone" autocomplete="phone" placeholder="Enter your number (+91)" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+              </div> </div>
+          <div class="sm:col-span-2">
+            <label for="email" class="block text-sm/6 font-semibold ">Email</label>
+            <div class="mt-2.5">
+              <input type="email" name="email" id="email" autocomplete="email" placeholder="Enter your number email" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="course" class="block text-sm/6 font-semibold " >Course you want to enroll</label>
+            <div class="mt-2.5">
+              <div class="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+                <div class="grid shrink-0 grid-cols-1 focus-within:relative">
+                  <select id="couRSE" name="couRSE" autocomplete="couRSE" aria-label="Course" class="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                    <option>CLAT UG</option>
+                    <option>CLAT PG</option>
+                  </select>
+                  <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="message" class="block text-sm/6 font-semibold">Message</label>
+            <div class="mt-2.5">
+              <textarea name="message" placeholder="If you have any queries you can ask here" id="message" rows="4" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
+            </div>
+          </div>
+          <div class="flex gap-x-4 sm:col-span-2">
+            <div class="flex h-6 items-center">
+        </div>
+        <div class="mx-auto">
+          <button type="submit" class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Book Your Free Session</button>
+        </div>
+      </form>
+    </div>
+</div>
+</div>
+</div>
+
+
+<footer id="footer" class="bg-gray-900 text-gray-300 py-10 px-4 md:px-8 lg:px-16">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="flex flex-col items-start space-y-4">
+          <div class="w-24 h-24 rounded-full border-2 border-gray-600 flex items-center justify-center p-2">
+              <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.29l6.19 2.71-6.19 2.71-6.19-2.71L12 3.29zM12 19.3c-3.1-1.45-5.5-4.72-5.5-8.3V7.07l5.5 2.42 5.5-2.42v3.93c0 3.58-2.4 6.85-5.5 8.3z"/>
+              </svg>
+          </div>
+          <div class="flex items-center space-x-2 text-sm">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>3256, Sector 44D, Chandigarh 160047</span>
+          </div>
+          <div class="flex items-center space-x-2 text-sm">
+              <i class="fas fa-phone"></i>
+              <span>(+91) 987614244</span>
+          </div>
+          <div class="flex items-center space-x-2 text-sm">
+              <i class="fas fa-envelope"></i>
+              <span>clat.nlti@gmail.com</span>
+          </div>
+      </div>
+
+      <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2 list-none p-0">
+              <li><a href="#" class="hover:text-white text-sm">About Us</a></li>
+              <li><a href="#" class="hover:text-white text-sm">Contact Us</a></li>
+              <li><a href="#" class="hover:text-white text-sm">Law School Predictor</a></li>
+          </ul>
+      </div>
+
+      <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Information</h3>
+          <ul class="space-y-2 list-none p-0">
+              <li><a href="#" class="hover:text-white text-sm">Refund Policy</a></li>
+              <li><a href="#" class="hover:text-white text-sm">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white text-sm">Terms And Conditions</a></li>
+          </ul>
+      </div>
+
+      <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:text-white hover:border-white transition-colors duration-200">
+                  <i class="fab fa-youtube text-lg"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:text-white hover:border-white transition-colors duration-200">
+                  <i class="fab fa-twitter text-lg"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:text-white hover:border-white transition-colors duration-200">
+                  <i class="fab fa-linkedin-in text-lg"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:text-white hover:border-white transition-colors duration-200">
+                  <i class="fab fa-instagram text-lg"></i>
+              </a>
+          </div>
+      </div>
+  </div>
+
+  <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+      &copy; 2026 by National Law Training Institute.
+  </div>
+</footer>
+
+    
+</body>
+</html>
